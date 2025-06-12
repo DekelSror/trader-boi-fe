@@ -1,0 +1,111 @@
+:root {
+    /* Colors */
+    --color-primary: #3182ce;
+    --color-primary-light: #63b3ed;
+    --color-primary-bg: #ebf8ff;
+    --color-success: #68d391;
+    --color-danger: #e53e3e;
+    --color-warning: #f6ad55;
+    --color-muted: #a0aec0;
+    --color-bg: #f0f8ff;
+    --color-card-bg: #fff;
+    --color-border: #e2e8f0;
+    --color-purple: #805ad5;
+    --color-purple-light: #b794f4;
+    --color-shadow: #90cdf4;
+    --color-shadow-purple: #d6bcfa;
+  
+    /* Fonts */
+    --font-main: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+    --font-size-base: 16px;
+    --font-size-lg: 18px;
+    --font-size-xl: 40px;
+  
+    /* Spacing */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 32px;
+    --space-xl: 48px;
+  
+    /* Border radius */
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+  }
+
+/* App background and centering helpers */
+body, #root {
+  min-height: 100vh;
+  background: var(--color-bg);
+  font-family: var(--font-main);
+  margin: 0;
+  padding: 0;
+}
+
+.app-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: var(--space-xl);
+}
+
+/* Header styles */
+.app-header {
+  width: 100%;
+  background: var(--color-primary);
+  padding: var(--space-md) 0;
+  box-shadow: 0 2px 4px var(--color-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.app-header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0 var(--space-lg);
+}
+.app-header-title {
+  color: white;
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 1px;
+}
+.app-header-nav {
+  display: flex;
+  gap: var(--space-md);
+}
+.app-header-link {
+  color: white;
+  text-decoration: none;
+  font-size: var(--font-size-base);
+  opacity: 0.9;
+  transition: opacity 0.2s, text-decoration 0.2s;
+}
+.app-header-link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+.app-header-page {
+  color: white;
+  font-size: var(--font-size-base);
+  opacity: 0.9;
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .app-main, .app-header-inner {
+    max-width: 98vw;
+    padding: 0 var(--space-md);
+  }
+  .app-header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-sm);
+  }
+}
