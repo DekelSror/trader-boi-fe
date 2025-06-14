@@ -20,25 +20,23 @@ export type RunningAlgo = {
 
 // for algo builder
 
-type AlgoCondition = {
+export type AlgoCondition = {
     left: string
     op: string
-    right: string | number
+    right: string | number | boolean
 }
 
-type AlgoAction = 'BUY' | 'SELL'
+export type AlgoAction = 'BUY' | 'SELL'
 
-type AlgoRule = {
-    conditions: AlgoCondition
+export type AlgoRule = {
+    conditions: AlgoCondition[]
     action: AlgoAction
 }
 
-
-type AlgoParam = {
+export type AlgoParam = {
     param_type: string
     init_args: (string | number | boolean | null)[]
 }
-
 
 // sent to BE
 export type Algo = {

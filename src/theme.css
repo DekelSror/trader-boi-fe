@@ -97,6 +97,81 @@ body, #root {
   opacity: 0.9;
 }
 
+/* AlgoBuilder styles */
+.algo-builder {
+  padding: var(--space-lg);
+}
+
+.algo-builder-section {
+  display: flex;
+  gap: var(--space-lg);
+}
+
+.algo-builder-column {
+  flex: 1;
+}
+
+.algo-builder-block {
+  padding: var(--space-md);
+  margin: var(--space-xs) 0;
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.algo-builder-input {
+  width: 100%;
+  padding: var(--space-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-base);
+}
+
+.algo-builder-button {
+  padding: var(--space-sm) var(--space-md);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  transition: opacity 0.2s;
+}
+
+.algo-builder-button:hover {
+  opacity: 0.9;
+}
+
+.algo-builder-button-primary {
+  background-color: var(--color-primary);
+}
+
+.algo-builder-button-danger {
+  background-color: var(--color-danger);
+}
+
+.algo-builder-button-full {
+  width: 100%;
+  margin-top: var(--space-md);
+}
+
+.algo-builder-arg-list {
+  margin: var(--space-md) 0;
+}
+
+.algo-builder-arg-item {
+  display: flex;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.algo-builder-arg-input {
+  flex: 1;
+}
+
+.algo-builder-preview {
+  margin-top: var(--space-lg);
+}
+
 /* Responsive tweaks */
 @media (max-width: 900px) {
   .app-main, .app-header-inner {
@@ -107,5 +182,8 @@ body, #root {
     flex-direction: column;
     align-items: flex-start;
     gap: var(--space-sm);
+  }
+  .algo-builder-section {
+    flex-direction: column;
   }
 }
