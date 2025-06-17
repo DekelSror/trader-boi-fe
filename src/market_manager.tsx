@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import type { Trade } from './models'
-import { TRADE_HUB_WS_URL } from './models'
+import type { Trade } from './types'
+import { TRADE_HUB_WS_URL } from './types'
 import { useAlgoStore } from './store'
 import './theme.css';
 

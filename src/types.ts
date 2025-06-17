@@ -17,9 +17,6 @@ export type RunningAlgo = {
     state: 'running' | 'stopped' | 'error'
 }
 
-
-// for algo builder
-
 export type AlgoCondition = {
     left: string
     op: string
@@ -33,17 +30,10 @@ export type AlgoRule = {
     action: AlgoAction
 }
 
-export type AlgoParam = {
-    param_type: string
-    init_args: (string | number | null)[]
-}
-
-// sent to BE
 export type Algo = {
     title: string
-    params: AlgoParam[]
     rules: AlgoRule[]
 }
 
 export const TRADE_HUB_WS_URL = 'ws://localhost:12000'
-export const ALGO_CONTROLLER_API = 'http://localhost:13000/api/algos'
+export const ALGO_CONTROLLER_API = 'http://localhost:13000/api/algos' 

@@ -26,6 +26,15 @@
   margin: 0;
 }
 
+.sidebar-input {
+  width: 100%;
+  padding: var(--space-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-base);
+  box-sizing: border-box; /* To include padding in the width */
+}
+
 .sidebar-button {
   padding: var(--space-sm) var(--space-md);
   background-color: var(--color-primary-bg);
@@ -41,4 +50,15 @@
   background-color: var(--color-primary);
   color: white;
   border-color: var(--color-primary);
+}
+
+.sidebar-button.sidebar-button-primary {
+  background-color: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+.sidebar-button.sidebar-button-primary:hover {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
 } 

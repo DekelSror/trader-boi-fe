@@ -1,6 +1,6 @@
 import { create } from 'zustand'
-import type { RunningAlgo } from './models'
-import { ALGO_CONTROLLER_API } from './models'
+import type { RunningAlgo } from './types'
+import { ALGO_CONTROLLER_API } from './types'
 
 interface AlgoStore {
   algos: RunningAlgo[]
@@ -9,13 +9,20 @@ interface AlgoStore {
   stopAlgo: (name: string) => Promise<void>
 }
 
+type RawAlgo = {
+  module_name?: string;
+  name: string;
+  actions: string[];
+  state: 'running' | 'stopped' | 'error';
+}
+
 export const useAlgoStore = create<AlgoStore>((set) => ({
   algos: [],
   fetchAlgos: async () => {
     const res = await fetch(ALGO_CONTROLLER_API)
-    const data = await res.json()
+    const data: RawAlgo[] = await res.json()
     set({
-      algos: data.map((a: any) => ({
+      algos: data.map((a) => ({
         name: a.module_name || a.name,
         actions: a.actions || [],
         state: a.state,

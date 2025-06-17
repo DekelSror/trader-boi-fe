@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactFlow, { Controls, Background } from 'reactflow';
+import ReactFlow, { Controls, Background, type Viewport } from 'reactflow';
 import 'reactflow/dist/style.css';
 import './algo_canvas.css';
 
@@ -19,6 +19,12 @@ const AlgoCanvas: React.FC = () => {
   const onNodesChange = useFlowStore((state: RFState) => state.onNodesChange);
   const onEdgesChange = useFlowStore((state: RFState) => state.onEdgesChange);
   const onConnect = useFlowStore((state: RFState) => state.onConnect);
+  const viewport = useFlowStore((state: RFState) => state.viewport);
+  const setViewport = useFlowStore((state: RFState) => state.setViewport);
+  
+  const onMove = (_event: MouseEvent | TouchEvent | WheelEvent | undefined, viewport: Viewport) => {
+    setViewport(viewport);
+  }
 
   return (
     <div className="algo-canvas-container">
@@ -31,7 +37,8 @@ const AlgoCanvas: React.FC = () => {
           onEdgesChange={onEdgesChange}
           onConnect={onConnect}
           nodeTypes={nodeTypes}
-          fitView
+          onMove={onMove}
+          defaultViewport={viewport}
         >
           <Background />
           <Controls />

@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import MarketManagerPage from "./market_manager";
-import AlgoBuilder from "./algo_builder";
 import './theme.css';
 import AlgoCanvas from './algo_canvas';
 
@@ -50,7 +49,14 @@ function Header({ currentPage, onPageChange }: { currentPage: Page, onPageChange
 }
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState<Page>('market');
+  const [currentPage, setCurrentPage] = useState<Page>(() => {
+    const savedPage = localStorage.getItem('currentPage');
+    return (savedPage as Page) || 'market';
+  });
+
+  useEffect(() => {
+    localStorage.setItem('currentPage', currentPage);
+  }, [currentPage]);
 
   const renderPage = () => {
     switch (currentPage) {
