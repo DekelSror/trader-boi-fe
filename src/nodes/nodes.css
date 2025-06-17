@@ -1,0 +1,51 @@
+.custom-node {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: var(--color-card-bg);
+  width: 250px;
+  font-family: var(--font-main);
+}
+
+.custom-node .node-header {
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--color-primary-bg);
+  border-bottom: 1px solid var(--color-border);
+  font-weight: 600;
+  color: var(--color-primary);
+  border-top-left-radius: var(--radius-md);
+  border-top-right-radius: var(--radius-md);
+}
+
+.custom-node .node-content {
+  padding: var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.custom-node .node-content input,
+.custom-node .node-content select {
+  width: 100%;
+  padding: var(--space-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-base);
+}
+
+/* Specific node styles */
+.condition-node .node-header {
+  background-color: var(--color-purple-light);
+  color: var(--color-purple);
+}
+
+.action-node .node-header {
+  background-color: #d1e7dd; /* A light green */
+  color: #0f5132; /* A dark green */
+}
+
+.react-flow__handle {
+  width: 10px !important;
+  height: 10px !important;
+  background: var(--color-primary) !important;
+  border: 1px solid var(--color-card-bg) !important;
+} 

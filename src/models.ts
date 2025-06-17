@@ -23,7 +23,7 @@ export type RunningAlgo = {
 export type AlgoCondition = {
     left: string
     op: string
-    right: string | number | boolean
+    right: string | number
 }
 
 export type AlgoAction = 'BUY' | 'SELL'
@@ -35,7 +35,7 @@ export type AlgoRule = {
 
 export type AlgoParam = {
     param_type: string
-    init_args: (string | number | boolean | null)[]
+    init_args: (string | number | null)[]
 }
 
 // sent to BE

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import MarketManagerPage from "./market_manager";
 import AlgoBuilder from "./algo_builder";
 import './theme.css';
+import AlgoCanvas from './algo_canvas';
 
 type Page = 'home' | 'market' | 'algo-builder';
 
@@ -56,7 +57,7 @@ export default function App() {
       case 'market':
         return <MarketManagerPage />;
       case 'algo-builder':
-        return <AlgoBuilder />;
+        return <AlgoCanvas />;
       case 'home':
         return <div>Welcome to Trader Boi</div>;
       default:
